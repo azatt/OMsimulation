@@ -3,9 +3,12 @@ using UnityEngine;
 
 public class WindDirection : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject timeObject;
+    TimeMultipier timeM;
+
     void Start()
     {
+        timeM = timeObject.GetComponent<TimeMultipier>();
         RandomWindDir();
         StartCoroutine("ChangeWindDir");
     }
@@ -22,7 +25,7 @@ public class WindDirection : MonoBehaviour
         {
             RandomWindDir();
             Debug.Log("Current direction: " + transform.rotation.ToString());
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1 * 1 / timeM.timeMultipier);
         }
     }
 
