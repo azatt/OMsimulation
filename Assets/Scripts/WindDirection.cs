@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WindDirection : MonoBehaviour
@@ -7,12 +5,17 @@ public class WindDirection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.rotation = Random.rotation;
+        var tempRotation = Quaternion.identity;
+        var tempVector = Vector3.zero;
+        tempVector = tempRotation.eulerAngles;
+        tempVector.y = Random.Range(0, 359);
+        tempRotation.eulerAngles = tempVector;
+        transform.rotation = tempRotation;
     }
 
     // Update is called once per frame
-        void Update()
+    void Update()
     {
-        
+
     }
 }
