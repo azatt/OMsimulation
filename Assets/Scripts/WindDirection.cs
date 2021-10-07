@@ -13,19 +13,13 @@ public class WindDirection : MonoBehaviour
         StartCoroutine("ChangeWindDir");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     IEnumerator ChangeWindDir()
     {
         for (; ; )
         {
-            RandomWindDir();
+            transform.Rotate(0, 0.25f, 0);
             Debug.Log("Current direction: " + transform.rotation.ToString());
-            yield return new WaitForSeconds(1 * 1 / timeM.timeMultipier);
+            yield return new WaitForSeconds(1 / timeM.timeMultipier);
         }
     }
 

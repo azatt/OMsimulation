@@ -3,12 +3,14 @@ using UnityEngine;
 public class WindForce : MonoBehaviour
 {
     Rigidbody rigidbody;
-    public GameObject windDirection;
     TimeMultipier timeM;
-    public GameObject timeObject;
+    GameObject timeObject, windDirection;
 
     void Start()
     {
+        timeObject = GameObject.FindWithTag("time");
+        windDirection = GameObject.FindWithTag("wind");
+        
         rigidbody = gameObject.GetComponent<Rigidbody>();
         timeM = timeObject.GetComponent<TimeMultipier>();
     }
@@ -16,6 +18,6 @@ public class WindForce : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rigidbody.AddForce(windDirection.transform.forward * 10 * timeM.timeMultipier);
+        rigidbody.AddForce(windDirection.transform.forward * (timeM.timeMultipier * 10));
     }
 }
