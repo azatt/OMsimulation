@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class CreatePool : MonoBehaviour
 {
-    public GameObject prefab;
+    public GameObject dryPrefab, plantedPrefab;
     
     // Start is called before the first frame update
     void Start()
     {
-        SimplePool.Preload(prefab, 100);
+        WeedPool.Preload(dryPrefab, 50);
+        SeedPool.Preload(plantedPrefab, 50);
     }
 }

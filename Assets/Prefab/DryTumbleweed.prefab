@@ -110,8 +110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7c6d1c70ad0a38419ef9af27fb9b86e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windDirection: {fileID: 4477317141194463004, guid: bd60d45cd99b6de4a9f7baf60976f1db, type: 3}
-  timeObject: {fileID: 5183677401804298264, guid: 2ec684f084363e149969e1c43c88463c, type: 3}
 --- !u!114 &8235527147077179637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +122,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b95bb7116e14a49a142c1218ccbfda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plantedPrefab: {fileID: 8911367788873811653, guid: c5112f753553f0649ab2d16ad17192f9, type: 3}
+  timeObject: {fileID: 0}
+  seedCount: 10
+  timeUntilBroken: 200
 --- !u!54 &8235527147077179636
 Rigidbody:
   m_ObjectHideFlags: 0

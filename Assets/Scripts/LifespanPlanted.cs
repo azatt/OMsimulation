@@ -1,10 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LifespanPlanted : MonoBehaviour
 {
-    public GameObject prefab;
+    public GameObject dryPrefab;
     TimeMultipier timeM;
     public GameObject timeObject;
     public int timeToGrow, timeToDie;
@@ -25,13 +24,14 @@ public class LifespanPlanted : MonoBehaviour
     {
         yield return new WaitForSeconds(timeToGrow / timeM.timeMultipier);
         gameObject.transform.localScale += new Vector3(0.9f, 0.9f, 0.9f);
+        gameObject.GetComponent<BoxCollider>().enabled = true;
         seed = false;
     }
 
     IEnumerator Wait()
     {
         yield return new WaitForSeconds((timeToDie + timeToGrow) / timeM.timeMultipier);
-        SimplePool.Spawn(prefab, transform.position, transform.rotation);
+        WeedPool.Spawn(dryPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 }
