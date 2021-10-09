@@ -28,16 +28,22 @@ public class LifespanHuman : MonoBehaviour
     void WalkAround()
     {
         translate = timeM.timeMultipier * walkSpeed * Time.deltaTime;
-        if (Vector3.Distance(targetPosition, transform.position) < 0.1)
+        if (Vector3.Distance(targetPosition, transform.position) < 1)
         {
-            new Vector3(planeRange * Random.value, transform.position.y, planeRange * Random.value);
+            targetPosition = new Vector3(planeRange * Random.value, transform.position.y, planeRange * Random.value);
         }
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, translate);
-        Debug.Log(targetPosition);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("I found a tumbleweed!");
+        if (collider.tag == "tumbleweed")
+        {
+            Debug.Log("I found a tumbleweed!");
+        }
+    }
+    private void KillTumbleweed()
+    {
+
     }
 }
