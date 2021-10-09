@@ -31,7 +31,7 @@ public class LifespanPlanted : MonoBehaviour
     IEnumerator Wait()
     {
         yield return new WaitForSeconds((timeToDie + timeToGrow) / timeM.timeMultipier);
-        WeedPool.Spawn(dryPrefab, transform.position, transform.rotation);
-        Destroy(gameObject);
+        SimplePool.Spawn(dryPrefab, transform.position, transform.rotation);
+        SimplePool.Despawn(gameObject);
     }
 }

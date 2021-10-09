@@ -28,9 +28,9 @@ public class LifespanDry : MonoBehaviour
         for (;;)
         {
             yield return new WaitForSeconds(10 / timeM.timeMultipier);
-            SeedPool.Spawn(plantedPrefab, transform.position, transform.rotation);
+            SimplePool.Spawn(plantedPrefab, transform.position, transform.rotation);
             if (seedCount <= 0 || timeUntilBroken <= 0)
-                Destroy(gameObject);
+                SimplePool.Despawn(gameObject);
         }
     }
 }
