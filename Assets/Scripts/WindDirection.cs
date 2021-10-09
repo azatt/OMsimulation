@@ -17,7 +17,7 @@ public class WindDirection : MonoBehaviour
     {
         for (; ; )
         {
-            transform.Rotate(0, 0.25f, 0);
+            transform.Rotate(0, 15, 0);
             //Debug.Log("Current direction: " + transform.rotation.ToString());
             yield return new WaitForSeconds(1 / timeM.timeMultipier);
         }

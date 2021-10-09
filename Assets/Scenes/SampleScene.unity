@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f979e02bb2d03fe4fbfc823d13938bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeMultipier: 10
+  timeMultipier: 0.016666668
 --- !u!4 &145958907
 Transform:
   m_ObjectHideFlags: 0
@@ -288,6 +288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dryPrefab: {fileID: 8235527147077179643, guid: c226c749ec664c640b1bbc5e1e1b5649, type: 3}
   plantedPrefab: {fileID: 8911367788873811653, guid: c5112f753553f0649ab2d16ad17192f9, type: 3}
+  gridsize: 20
+  baseFertility: 10
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,8 +578,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeObject: {fileID: 145958905}
-  timeToDie: 1000
-  walkSpeed: 1
+  timeToDie: 85000
+  walkSpeed: 5000
   planeRange: 100
 --- !u!135 &1181441009
 SphereCollider:
@@ -719,7 +721,7 @@ MonoBehaviour:
   dryPrefab: {fileID: 8235527147077179643, guid: c226c749ec664c640b1bbc5e1e1b5649, type: 3}
   timeObject: {fileID: 145958905}
   timeToGrow: 0
-  timeToDie: 100
+  timeToDie: 6
   seed: 0
 --- !u!1 &1792828815
 GameObject:
@@ -933,7 +935,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8235527147077179636, guid: c226c749ec664c640b1bbc5e1e1b5649, type: 3}
       propertyPath: m_Mass
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8235527147077179638, guid: c226c749ec664c640b1bbc5e1e1b5649, type: 3}
       propertyPath: m_RootOrder

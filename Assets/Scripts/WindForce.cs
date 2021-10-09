@@ -18,6 +18,6 @@ public class WindForce : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rigidbody.AddForce(windDirection.transform.forward * (timeM.timeMultipier * 10));
+        rigidbody.AddForce(windDirection.transform.forward * (timeM.timeMultipier * 100));
     }
 }

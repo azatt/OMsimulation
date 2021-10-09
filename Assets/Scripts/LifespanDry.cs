@@ -17,18 +17,24 @@ public class LifespanDry : MonoBehaviour
         StartCoroutine(Roll());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    
     IEnumerator Roll()
     {
         for (;;)
         {
-            yield return new WaitForSeconds(10 / timeM.timeMultipier);
-            SimplePool.Spawn(plantedPrefab, transform.position, transform.rotation);
+            yield return new WaitForSeconds(1 / timeM.timeMultipier);
+
+            int max = FertilityGrid.Gridsize;
+            int x = (int) (transform.position.x / max);
+            int y = (int) (transform.position.z / max);
+            if (0 <= x && x < max && 0 <= y && y < max)     // To prevent out of range exceptions
+            {
+                if (FertilityGrid.Fertility[x,y] > 0)
+                {
+                    SimplePool.Spawn(plantedPrefab, transform.position, transform.rotation);
+                    FertilityGrid.Fertility[x, y] -= 1;
+                }
+            }
+            
             if (seedCount <= 0 || timeUntilBroken <= 0)
                 SimplePool.Despawn(gameObject);
         }

@@ -110,6 +110,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dryPrefab: {fileID: 8235527147077179643, guid: c226c749ec664c640b1bbc5e1e1b5649, type: 3}
   timeObject: {fileID: 0}
-  timeToGrow: 100
-  timeToDie: 100
-  seed: 0
+  timeToGrow: 2
+  timeToDie: 6
+  seed: 1
