@@ -32,7 +32,7 @@ public class LifespanHuman : MonoBehaviour
         {
             new Vector3(planeRange * Random.value, transform.position.y, planeRange * Random.value);
         }
-        Vector3.MoveTowards(transform.position, targetPosition, translate);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, translate);
         Debug.Log(targetPosition);
     }
 
