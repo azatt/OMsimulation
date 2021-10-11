@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f979e02bb2d03fe4fbfc823d13938bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeMultipier: 0.016666668
+  timeMultipier: 1
 --- !u!4 &145958907
 Transform:
   m_ObjectHideFlags: 0
@@ -288,7 +288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dryPrefab: {fileID: 8235527147077179643, guid: c226c749ec664c640b1bbc5e1e1b5649, type: 3}
   plantedPrefab: {fileID: 8911367788873811653, guid: c5112f753553f0649ab2d16ad17192f9, type: 3}
-  gridsize: 20
+  gridsize: 100
+  areasize: 100
   baseFertility: 10
 --- !u!1 &705507993
 GameObject:
@@ -487,7 +488,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &1181441004
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -624,7 +625,7 @@ GameObject:
   - component: {fileID: 1758277137}
   - component: {fileID: 1758277141}
   m_Layer: 0
-  m_Name: PlantedTumbleweed
+  m_Name: FirstTumbleweed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

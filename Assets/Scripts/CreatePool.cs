@@ -3,7 +3,7 @@ using UnityEngine;
 public class CreatePool : MonoBehaviour
 {
     public GameObject dryPrefab, plantedPrefab;
-    public int gridsize, baseFertility;
+    public int gridsize, areasize, baseFertility;
 
     // Start is called before the first frame update
     void Start()
@@ -12,7 +12,9 @@ public class CreatePool : MonoBehaviour
         SimplePool.Preload(plantedPrefab, 50);
 
         FertilityGrid.Gridsize = gridsize;
-        FertilityGrid.Fertility = new float[gridsize,gridsize];
+        FertilityGrid.Areasize = areasize;
+        FertilityGrid.Fertility = new int[gridsize,gridsize];
+        
         for (int i = 0; i < gridsize; i++)
         { 
             for (int j = 0; j < gridsize; j++)

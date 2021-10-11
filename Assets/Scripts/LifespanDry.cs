@@ -23,9 +23,10 @@ public class LifespanDry : MonoBehaviour
         {
             yield return new WaitForSeconds(1 / timeM.timeMultipier);
 
-            int max = FertilityGrid.Gridsize;
-            int x = (int) (transform.position.x / max);
-            int y = (int) (transform.position.z / max);
+            int area = FertilityGrid.Areasize;
+            int max  = FertilityGrid.Gridsize;
+            int x = (int) (transform.position.x * max / area);
+            int y = (int) (transform.position.z * max / area);
             if (0 <= x && x < max && 0 <= y && y < max)     // To prevent out of range exceptions
             {
                 if (FertilityGrid.Fertility[x,y] > 0)

@@ -4,6 +4,6 @@ using UnityEngine;
 
 public static class FertilityGrid
 {
-    public static float[,] Fertility;
-    public static int Gridsize;
+    public static int[,] Fertility;
+    public static int Gridsize, Areasize;
 }
