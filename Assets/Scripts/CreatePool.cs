@@ -14,6 +14,12 @@ public class CreatePool : MonoBehaviour
         FertilityGrid.Gridsize = gridsize;
         FertilityGrid.Areasize = areasize;
         FertilityGrid.Fertility = new int[gridsize,gridsize];
+
+        for (int i = 0; i < 10; i++)
+        {
+            SimplePool.Spawn(dryPrefab, new Vector3(Random.value * 100, 0.5f, Random.value * 100),
+                Quaternion.Euler(0, 0, 0));
+        }
         
         for (int i = 0; i < gridsize; i++)
         { 

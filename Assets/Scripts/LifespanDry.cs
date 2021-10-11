@@ -21,7 +21,7 @@ public class LifespanDry : MonoBehaviour
     {
         for (;;)
         {
-            yield return new WaitForSeconds(1 / timeM.timeMultipier);
+            yield return new WaitForSeconds(1 / (10 * timeM.timeMultipier));
 
             int area = FertilityGrid.Areasize;
             int max  = FertilityGrid.Gridsize;
