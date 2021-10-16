@@ -111,8 +111,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dryPrefab: {fileID: 8235527147077179643, guid: c226c749ec664c640b1bbc5e1e1b5649, type: 3}
   timeObject: {fileID: 0}
-  timeToGrow: 4
-  timeToDie: 8
+  timeToGrow: 4000
+  timeToDie: 4500
   seed: 1
 --- !u!54 &-8568124643423334360
 Rigidbody:
