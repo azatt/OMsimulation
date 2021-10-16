@@ -273,8 +273,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454388007}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 50.4, y: 21.1625, z: -0.7}
-  m_LocalScale: {x: 1.8219446, y: 45.619904, z: 103.06327}
+  m_LocalPosition: {x: 50, y: 40, z: -25}
+  m_LocalScale: {x: 50, y: 100, z: 200}
   m_Children: []
   m_Father: {fileID: 383099267}
   m_RootOrder: 2
@@ -400,9 +400,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dryPrefab: {fileID: 8235527147077179643, guid: c226c749ec664c640b1bbc5e1e1b5649, type: 3}
   plantedPrefab: {fileID: 8911367788873811653, guid: c5112f753553f0649ab2d16ad17192f9, type: 3}
-  gridsize: 30
+  gridsize: 1000
   areasize: 100
-  baseFertility: 1
+  baseFertility: 2
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,8 +607,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 996797860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7, y: 21.1625, z: 50.5245}
-  m_LocalScale: {x: 1.8219446, y: 45.619904, z: 103.06327}
+  m_LocalPosition: {x: -25, y: 40, z: 50}
+  m_LocalScale: {x: 50, y: 100, z: 200}
   m_Children: []
   m_Father: {fileID: 383099267}
   m_RootOrder: 0
@@ -802,6 +802,7 @@ MonoBehaviour:
   timeToDie: 85000
   walkSpeed: 50
   planeRange: 100
+  workingHours: 2
 --- !u!135 &1181441009
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -859,8 +860,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1264465295}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 50.4, y: 21.1625, z: 100.8}
-  m_LocalScale: {x: 1.8219446, y: 45.619904, z: 103.06327}
+  m_LocalPosition: {x: 50, y: 40, z: 125}
+  m_LocalScale: {x: 50, y: 100, z: 200}
   m_Children: []
   m_Father: {fileID: 383099267}
   m_RootOrder: 3
@@ -968,6 +969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 998a55642aa9b974c8004c3d29690726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeObject: {fileID: 145958905}
 --- !u!4 &1338149072
 Transform:
   m_ObjectHideFlags: 0
@@ -1010,8 +1012,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515278862}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 100.8, y: 21.1625, z: 50.5245}
-  m_LocalScale: {x: 1.8219446, y: 45.619904, z: 103.06327}
+  m_LocalPosition: {x: 125, y: 40, z: 50}
+  m_LocalScale: {x: 50, y: 100, z: 200}
   m_Children: []
   m_Father: {fileID: 383099267}
   m_RootOrder: 1
@@ -1144,6 +1146,7 @@ MonoBehaviour:
   timeToDie: 85000
   walkSpeed: 50
   planeRange: 100
+  workingHours: 2
 --- !u!135 &1626037062
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1288,6 +1291,7 @@ MonoBehaviour:
   timeToDie: 85000
   walkSpeed: 50
   planeRange: 100
+  workingHours: 2
 --- !u!135 &1739674269
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1490,7 +1494,6 @@ MonoBehaviour:
   timeObject: {fileID: 145958905}
   timeToGrow: 0
   timeToDie: 6
-  seed: 0
 --- !u!1 &1769083916
 GameObject:
   m_ObjectHideFlags: 0
@@ -1545,6 +1548,7 @@ MonoBehaviour:
   timeToDie: 85000
   walkSpeed: 50
   planeRange: 100
+  workingHours: 2
 --- !u!135 &1769083919
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1664,7 +1668,7 @@ Transform:
   m_GameObject: {fileID: 1792828815}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 50, y: -2, z: 50}
-  m_LocalScale: {x: 100, y: 2, z: 100}
+  m_LocalScale: {x: 120, y: 2, z: 120}
   m_Children: []
   m_Father: {fileID: 496217155}
   m_RootOrder: 0

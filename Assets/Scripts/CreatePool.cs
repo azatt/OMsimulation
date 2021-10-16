@@ -4,6 +4,9 @@ public class CreatePool : MonoBehaviour
 {
     public GameObject dryPrefab, plantedPrefab;
     public int gridsize, areasize, baseFertility;
+    // gridsize = 1000 (this way 1 place in the grid represents a plot of 10x10 meters)
+    // areasize = the size of the field (100x100)
+    // baseFertility = 2 (a single plot of 10x10 meters has room (ferility wise) for 2 weeds)
 
     // Start is called before the first frame update
     void Start()

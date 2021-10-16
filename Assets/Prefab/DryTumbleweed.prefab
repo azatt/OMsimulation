@@ -124,8 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantedPrefab: {fileID: 8911367788873811653, guid: c5112f753553f0649ab2d16ad17192f9, type: 3}
   timeObject: {fileID: 0}
-  seedCount: 100
-  timeUntilBroken: 160
+  seedCount: 10000
+  timeUntilBroken: 170
 --- !u!54 &8235527147077179636
 Rigidbody:
   m_ObjectHideFlags: 0

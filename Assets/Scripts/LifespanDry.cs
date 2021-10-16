@@ -7,6 +7,8 @@ public class LifespanDry : MonoBehaviour
     TimeMultipier timeM;
     public GameObject timeObject;
     public int seedCount, timeUntilBroken;
+    // seedCount = 10.000 (a single tumbleweed can have up to 1/4 of a million seeds)
+    // timeUntilBroken = 170 (168 hours in a week)
     
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,7 @@ public class LifespanDry : MonoBehaviour
         for (;;)
         {
             yield return new WaitForSeconds(1 / (60 * timeM.timeMultipier));
+            // drops a seed every minute
 
             int area = FertilityGrid.Areasize;
             int max  = FertilityGrid.Gridsize;
