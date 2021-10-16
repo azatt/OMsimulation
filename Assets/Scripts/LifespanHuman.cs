@@ -12,6 +12,7 @@ public class LifespanHuman : MonoBehaviour
 
     private bool foundTumbleweed;
     private GameObject foundTumbleweedObject;
+    private float timer;
 
     // Start is called before the first frame update
     void Start()
@@ -20,13 +21,19 @@ public class LifespanHuman : MonoBehaviour
         timeM = timeObject.GetComponent<TimeMultipier>();
         targetPosition = new Vector3(planeRange * Random.value, transform.position.y, planeRange * Random.value);
         foundTumbleweed = false;
+        timer = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!foundTumbleweed) { WalkAround(); }
-        else { KillTumbleweed(); }
+        if (timer < 8)
+        {
+            if (!foundTumbleweed) { WalkAround(); }
+            else { KillTumbleweed(); }
+        }
+        timer += timeM.timeMultipier * Time.deltaTime;
+        if (timer >= 24) { timer = 0; }
     }
 
     void WalkAround()
@@ -41,13 +48,14 @@ public class LifespanHuman : MonoBehaviour
 
     private void OnTriggerStay(Collider collider)
     {
-        if (collider.tag == "tumbleweed")
+        if (collider.gameObject.CompareTag("tumbleweed"))
         {
             //Debug.Log("I found a tumbleweed!");
             foundTumbleweed = true;
             foundTumbleweedObject = collider.gameObject;
         }
     }
+    
     private void KillTumbleweed()
     {
         if (!foundTumbleweedObject.activeSelf)
