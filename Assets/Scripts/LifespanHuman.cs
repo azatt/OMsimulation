@@ -39,11 +39,11 @@ public class LifespanHuman : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, translate);
     }
 
-    private void OnTriggerEnter(Collider collider)
+    private void OnTriggerStay(Collider collider)
     {
         if (collider.tag == "tumbleweed")
         {
-            Debug.Log("I found a tumbleweed!");
+            //Debug.Log("I found a tumbleweed!");
             foundTumbleweed = true;
             foundTumbleweedObject = collider.gameObject;
         }

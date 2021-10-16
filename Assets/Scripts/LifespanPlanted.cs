@@ -8,14 +8,14 @@ public class LifespanPlanted : MonoBehaviour
     public GameObject timeObject;
     public int timeToGrow, timeToDie;
     public bool seed;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         timeObject = GameObject.FindWithTag("time");
         timeM = timeObject.GetComponent<TimeMultipier>();
         seed = true;
-        
+
         StartCoroutine(Grow());
         StartCoroutine(Wait());
     }
@@ -25,6 +25,7 @@ public class LifespanPlanted : MonoBehaviour
         yield return new WaitForSeconds(timeToGrow / timeM.timeMultipier);
         gameObject.transform.localScale += new Vector3(0.9f, 0.9f, 0.9f);
         gameObject.GetComponent<BoxCollider>().enabled = true;
+        gameObject.GetComponent<Rigidbody>().useGravity = true;
         seed = false;
     }
 
