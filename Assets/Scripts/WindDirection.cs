@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class WindDirection : MonoBehaviour
 {
@@ -17,9 +19,9 @@ public class WindDirection : MonoBehaviour
     {
         for (; ; )
         {
-            transform.Rotate(0, 15, 0);
+            transform.Rotate(0, 0.3f * timeM.timeMultipier, 0);
             //Debug.Log("Current direction: " + transform.rotation.ToString());
-            yield return new WaitForSeconds(1 / timeM.timeMultipier);
+            yield return new WaitForSeconds(0.02f);
         }
     }
 

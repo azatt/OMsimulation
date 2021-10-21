@@ -30,10 +30,11 @@ public class LifespanHuman : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (timer < workingHours)
         {
+            translate = timeM.timeMultipier * walkSpeed * Time.deltaTime;
             if (!foundTumbleweed) { WalkAround(); }
             else { KillTumbleweed(); }
         }
@@ -43,7 +44,6 @@ public class LifespanHuman : MonoBehaviour
 
     void WalkAround()
     {
-        translate = timeM.timeMultipier * walkSpeed * Time.deltaTime;
         if (Vector3.Distance(targetPosition, transform.position) < 1)
         {
             targetPosition = new Vector3(planeRange * Random.value, 1, planeRange * Random.value);

@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f979e02bb2d03fe4fbfc823d13938bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeMultipier: 1
+  timeMultipier: 10
 --- !u!4 &145958907
 Transform:
   m_ObjectHideFlags: 0
@@ -402,7 +402,7 @@ MonoBehaviour:
   plantedPrefab: {fileID: 8911367788873811653, guid: c5112f753553f0649ab2d16ad17192f9, type: 3}
   gridsize: 1000
   areasize: 100
-  baseFertility: 2
+  baseFertility: 10
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,9 +800,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeObject: {fileID: 145958905}
   timeToDie: 85000
-  walkSpeed: 50
+  walkSpeed: 40
   planeRange: 100
-  workingHours: 2
+  workingHours: 0
 --- !u!135 &1181441009
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1144,9 +1144,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeObject: {fileID: 145958905}
   timeToDie: 85000
-  walkSpeed: 50
+  walkSpeed: 40
   planeRange: 100
-  workingHours: 2
+  workingHours: 0
 --- !u!135 &1626037062
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1289,9 +1289,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeObject: {fileID: 145958905}
   timeToDie: 85000
-  walkSpeed: 50
+  walkSpeed: 40
   planeRange: 100
-  workingHours: 2
+  workingHours: 0
 --- !u!135 &1739674269
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1546,9 +1546,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeObject: {fileID: 145958905}
   timeToDie: 85000
-  walkSpeed: 50
+  walkSpeed: 40
   planeRange: 100
-  workingHours: 2
+  workingHours: 0
 --- !u!135 &1769083919
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1749,7 +1749,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &2034463331
 GameObject:
