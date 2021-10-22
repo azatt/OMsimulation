@@ -20,7 +20,7 @@ public class CreatePool : MonoBehaviour
 
         for (int i = 0; i < 10; i++)
         {
-            SimplePool.Spawn(dryPrefab, new Vector3(Random.value * 100, 0.5f, Random.value * 100),
+            SimplePool.Spawn(dryPrefab, new Vector3(Random.Range(0.1f, 0.9f) * 100, 0.5f, Random.Range(0.1f, 0.9f) * 100),
                 Quaternion.Euler(0, 0, 0));
         }
         
