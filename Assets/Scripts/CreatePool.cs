@@ -3,7 +3,7 @@ using UnityEngine;
 public class CreatePool : MonoBehaviour
 {
     public GameObject dryPrefab, plantedPrefab;
-    public int gridsize, areasize, baseFertility;
+    public int gridsize, areasize, baseFertility, nrOfStartingWeeds;
     // gridsize = 1000 (this way 1 place in the grid represents a plot of 10x10 meters)
     // areasize = the size of the field (100x100)
     // baseFertility = 2 (a single plot of 10x10 meters has room (ferility wise) for 2 weeds)
@@ -18,7 +18,7 @@ public class CreatePool : MonoBehaviour
         FertilityGrid.Areasize = areasize;
         FertilityGrid.Fertility = new int[gridsize,gridsize];
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < nrOfStartingWeeds; i++)
         {
             SimplePool.Spawn(dryPrefab, new Vector3(Random.Range(0.1f, 0.9f) * 100, 0.5f, Random.Range(0.1f, 0.9f) * 100),
                 Quaternion.Euler(0, 0, 0));
