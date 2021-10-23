@@ -40,7 +40,7 @@ public class CreatePool : MonoBehaviour
     {
         for (;;)
         {
-            yield return new WaitForSeconds(200);
+            yield return new WaitForSeconds(10000 / baseFertility);
         
             for (int i = 0; i < gridsize; i++)
             { 
