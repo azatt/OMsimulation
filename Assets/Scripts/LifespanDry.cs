@@ -8,7 +8,8 @@ public class LifespanDry : MonoBehaviour
     public GameObject plantedPrefab;
     TimeMultipier timeM;
     public GameObject timeObject;
-    public int seedCount, timeUntilBroken;
+    public int seedCount;
+    public float timeUntilBroken;
     
     //private bool slow = true;
     // seedCount = 10.000 (a single tumbleweed can have up to 1/4 of a million seeds)
@@ -49,12 +50,14 @@ public class LifespanDry : MonoBehaviour
                     {
                         float r = Random.value;
                         float random = r * Random.Range(-1, 2);
-                        SimplePool.Spawn(plantedPrefab, new Vector3(pos.x + Mathf.Sqrt(i) * random, 0.5f, pos.z + Mathf.Sqrt(i) * (1-random)), transform.rotation);
+                        SimplePool.Spawn(plantedPrefab, new Vector3(pos.x + i * random, 0.5f, pos.z + i * (1-random)), transform.rotation);
                         FertilityGrid.Fertility[x, y] -= 1;
                     }
                 }
             //}
         }
+
+        timeUntilBroken -= Time.deltaTime * timeM.timeMultipier;
             
         if (seedCount <= 0 || timeUntilBroken <= 0)
             SimplePool.Despawn(gameObject);

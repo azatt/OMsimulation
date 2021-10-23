@@ -11,7 +11,7 @@ public class LifespanHuman : MonoBehaviour
     // timeToDie = 85000 (about 10 years)
     // walkSpeed = 50 (1 unit of distance is 10 meters. A human walks about 5 km/h, thus a speed of 50)
     // planeRange = the size of the field (100x100)
-    // workingHours = 2 (every human on tumbleweed-search-duty has to search for 2 hours a day for tumbleweeds)
+    // workingHours = (every human on tumbleweed-search-duty has to search for 4 hours twice a week for tumbleweeds)
     
     private float translate;
     private Vector3 targetPosition;
@@ -25,8 +25,8 @@ public class LifespanHuman : MonoBehaviour
         timeObject = GameObject.FindWithTag("time");
         timeM = timeObject.GetComponent<TimeMultipier>();
         transform.position =
-            new Vector3(Random.Range(0.1f, 0.9f) * planeRange, 1, Random.Range(0.1f, 0.9f) * planeRange);
-        targetPosition = new Vector3(planeRange * Random.value, 1, planeRange * Random.value);
+            new Vector3(Random.Range(0.1f, 0.9f) * planeRange, 0.1f, Random.Range(0.1f, 0.9f) * planeRange);
+        targetPosition = new Vector3(planeRange * Random.value, 0.1f, planeRange * Random.value);
         foundTumbleweed = false;
         timer = 0;
     }
@@ -41,14 +41,14 @@ public class LifespanHuman : MonoBehaviour
             else { KillTumbleweed(); }
         }
         timer += timeM.timeMultipier * Time.deltaTime;
-        if (timer >= 24) { timer = 0; }
+        if (timer >= 84) { timer = 0; }
     }
 
     void WalkAround()
     {
         if (Vector3.Distance(targetPosition, transform.position) < 1)
         {
-            targetPosition = new Vector3(planeRange * Random.value, 1, planeRange * Random.value);
+            targetPosition = new Vector3(planeRange * Random.value, 0.1f, planeRange * Random.value);
         }
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, translate);
     }
@@ -70,7 +70,7 @@ public class LifespanHuman : MonoBehaviour
             foundTumbleweed = false;
             return;
         }
-        if (Vector3.Distance(foundTumbleweedObject.transform.position, transform.position) < 1)
+        if (Vector3.Distance(foundTumbleweedObject.transform.position, transform.position) < 4)
         {
             SimplePool.Despawn(foundTumbleweedObject);
             foundTumbleweed = false;

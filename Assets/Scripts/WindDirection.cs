@@ -19,9 +19,11 @@ public class WindDirection : MonoBehaviour
     {
         for (; ; )
         {
-            transform.Rotate(0, 0.3f * timeM.timeMultipier, 0);
-            //Debug.Log("Current direction: " + transform.rotation.ToString());
-            yield return new WaitForSeconds(0.02f);
+            //transform.Rotate(0, 0.3f * timeM.timeMultipier, 0);
+            //yield return new WaitForSeconds(0.02f);
+            float random = Random.Range(20f, 168f);
+            RandomWindDir();
+            yield return new WaitForSeconds(random);
         }
     }
 

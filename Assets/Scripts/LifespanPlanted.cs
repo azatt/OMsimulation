@@ -25,7 +25,7 @@ public class LifespanPlanted : MonoBehaviour
     {
         float random = Random.Range(0.9f, 1.1f);
         yield return new WaitForSeconds(random * timeToGrow / timeM.timeMultipier);
-        gameObject.transform.localScale += new Vector3(0.9f, 0.9f, 0.9f);
+        gameObject.transform.localScale += new Vector3(0.09f, 0.09f, 0.09f);
         gameObject.GetComponent<BoxCollider>().enabled = true;
         gameObject.GetComponent<Rigidbody>().useGravity = true;
     }

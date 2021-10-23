@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class CreatePool : MonoBehaviour
@@ -11,8 +12,8 @@ public class CreatePool : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SimplePool.Preload(dryPrefab, 50);
-        SimplePool.Preload(plantedPrefab, 50);
+        SimplePool.Preload(dryPrefab, 500);
+        SimplePool.Preload(plantedPrefab, 1000);
 
         FertilityGrid.Gridsize = gridsize;
         FertilityGrid.Areasize = areasize;
@@ -20,7 +21,7 @@ public class CreatePool : MonoBehaviour
 
         for (int i = 0; i < nrOfStartingWeeds; i++)
         {
-            SimplePool.Spawn(dryPrefab, new Vector3(Random.Range(0.1f, 0.9f) * 100, 0.5f, Random.Range(0.1f, 0.9f) * 100),
+            SimplePool.Spawn(dryPrefab, new Vector3(Random.Range(0.1f, 0.9f) * areasize, 0.5f, Random.Range(0.1f, 0.9f) * areasize),
                 Quaternion.Euler(0, 0, 0));
         }
         
@@ -29,6 +30,24 @@ public class CreatePool : MonoBehaviour
             for (int j = 0; j < gridsize; j++)
             {
                 FertilityGrid.Fertility[i,j] = baseFertility;
+            }
+        }
+
+        AddFertility();
+    }
+
+    IEnumerator AddFertility()
+    {
+        for (;;)
+        {
+            yield return new WaitForSeconds(200);
+        
+            for (int i = 0; i < gridsize; i++)
+            { 
+                for (int j = 0; j < gridsize; j++)
+                {
+                    FertilityGrid.Fertility[i,j]++;
+                }
             }
         }
     }
