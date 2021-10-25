@@ -36,7 +36,7 @@ public class ObjectCounter : MonoBehaviour
     }
     private void OnApplicationQuit()
     {
-        CreateTextFile();
+        //CreateTextFile();
     }
 
     void CreateTextFile()

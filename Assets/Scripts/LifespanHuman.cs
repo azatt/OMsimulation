@@ -25,8 +25,8 @@ public class LifespanHuman : MonoBehaviour
         timeObject = GameObject.FindWithTag("time");
         timeM = timeObject.GetComponent<TimeMultipier>();
         transform.position =
-            new Vector3(Random.Range(0.1f, 0.9f) * planeRange, 0.1f, Random.Range(0.1f, 0.9f) * planeRange);
-        targetPosition = new Vector3(planeRange * Random.value, 0.1f, planeRange * Random.value);
+            new Vector3(Random.Range(0.1f, 0.9f) * planeRange, 0.5f, Random.Range(0.1f, 0.9f) * planeRange);
+        targetPosition = new Vector3(planeRange * Random.value, 0.5f, planeRange * Random.value);
         foundTumbleweed = false;
         timer = 0;
     }
@@ -48,7 +48,7 @@ public class LifespanHuman : MonoBehaviour
     {
         if (Vector3.Distance(targetPosition, transform.position) < 1)
         {
-            targetPosition = new Vector3(planeRange * Random.value, 0.1f, planeRange * Random.value);
+            targetPosition = new Vector3(planeRange * Random.value, 0.5f, planeRange * Random.value);
         }
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, translate);
     }

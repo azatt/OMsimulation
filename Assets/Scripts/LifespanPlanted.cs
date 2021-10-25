@@ -25,14 +25,14 @@ public class LifespanPlanted : MonoBehaviour
     {
         float random = Random.Range(0.9f, 1.1f);
         yield return new WaitForSeconds(random * timeToGrow / timeM.timeMultipier);
-        gameObject.transform.localScale += new Vector3(0.09f, 0.09f, 0.09f);
+        gameObject.transform.localScale += new Vector3(0.45f, 0.45f, 0.45f);
         gameObject.GetComponent<BoxCollider>().enabled = true;
         gameObject.GetComponent<Rigidbody>().useGravity = true;
     }
 
     IEnumerator Wait()
     {
-        float random = Random.Range(0.9f, 1.1f);
+        float random = Random.Range(0.7f, 1.3f);
         yield return new WaitForSeconds((random * timeToDie + timeToGrow) / timeM.timeMultipier);
         SimplePool.Spawn(dryPrefab, transform.position, transform.rotation);
         SimplePool.Despawn(gameObject);
